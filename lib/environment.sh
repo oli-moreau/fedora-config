@@ -30,6 +30,9 @@ configure_services() {
 
 # Configure settings 
 configure_environment() {
+    #Set Hostname
+    sudo hostnamectl set-hostname zenbook
+    
     # Gnome Tweaks:
     dconf write /org/gnome/mutter/center-new-windows true
     dconf write /org/gnome/desktop/interface/icon-theme "'Tela'"
@@ -58,7 +61,7 @@ configure_environment() {
     # File history
     dconf write /org/gnome/desktop/privacy/remember-recent-files false
 
-    # Do nothing if the laptop lid is closed 
+    # Do nothing if the laptop lid is closed
     mkdir -p ~/.config/autostart/
     touch ~/.config/autostart/ignore-lid-switch-tweak.desktop
     sed -i -e '$a [Desktop Entry]' \
@@ -73,4 +76,8 @@ configure_environment() {
     # Application list setup
     dconf write /org/gnome/shell/app-picker-layout "[{'org.gnome.Nautilus.desktop': <{'position': <0>}>, 'google-chrome.desktop': <{'position': <1>}>, 'gitkraken.desktop': <{'position': <2>}>, 'blender.desktop': <{'position': <3>}>, 'steam.desktop': <{'position': <4>}>, 'org.gnome.Software.desktop': <{'position': <5>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <6>}>, 'gnome-system-monitor.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.Terminal.desktop': <{'position': <9>}>, 'org.gnome.tweaks.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>}]"
     dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop', 'libreoffice-writer.desktop', 'vlc.desktop', 'yelp.desktop', 'org.gnome.Cheese.desktop', 'com.github.GradienceTeam.Gradience.desktop', 'simple-scan.desktop', 'org.gnome.Totem.desktop', 'org.fedoraproject.MediaWriter.desktop', 'org.gnome.Photos.desktop', 'nl.hjdskes.gcolor3.desktop', 'transmission-gtk.desktop', 'filezilla.desktop', 'ca.desrt.dconf-editor.desktop', 'org.gnome.Calculator.desktop']"
+
+    # Dark theme
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+    dconf write /org/gnome/Console/theme "'auto'"
 }
