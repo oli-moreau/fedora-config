@@ -1,4 +1,4 @@
-# Fedora 38 Beta Workstation Configuration
+# Fedora 38 Workstation Configuration
 This is a small bash script that quickly set up my Fedora Workstation. As I frequently experiment with various OSes, I find this project quite handy during the configuration process.
 
 In summary, here is what it does:
@@ -13,7 +13,7 @@ In summary, here is what it does:
 ![Screenshot from 2023-02-05 09-20-33](https://user-images.githubusercontent.com/123499791/216827652-e8097f26-ff16-4323-8a44-d91ca67a57c3.png)
 
 ## Limitations
-- At this time, only Fedora 38 Beta Workstation is supported
+- At this time, only Fedora 38 Workstation is supported
 - GNOME extensions have not yet been added to the automation process
 
 ## Theme
